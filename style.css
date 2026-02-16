@@ -1,62 +1,137 @@
-body{
-  text-align: center;
-  background-color: black;
-}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Voltaire&display=swap");
 
-h1{
-  background-color: white;
-  font-size: 2.3rem;
-  animation: colorBlink 4s infinite;
-}
-
-@keyframes colorBlink {
-  0%   { color: black; }
-  30%  { color: rgb(255, 79, 108); } 
-  50%  { color: yellow; }
-  75%  { color: green; }
-  90%  { color: blue; }
-  100% { color: black; }
-}
-
-h2{
-  color: white;
-  font-size:1.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-} 
-
-.btn{
-  height: 205px;
-  width: 205px;
-  border-radius: 50%;
-  border: 7px solid white;
-  margin: 1.7rem 2rem;
-}
-
-.btn-container{
+body {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  background: #08090a;
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.pink{
-  background-color: rgb(255, 79, 108);
+h1 {
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.3;
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-family: "Press Start 2P", serif;
+  text-shadow:
+    0 2px 0 black,
+    0 0 10px white;
 }
 
-.yellow{
-  background-color: yellow;
+/* BOARD */
+.container {
+  position: relative;
+  width: 560px;
+  height: 560px;
+  margin: auto;
+  border-radius: 50%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
 }
 
-.green{
-  background-color: green;
+/* BUTTONS */
+.button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.blue{
-  background-color: blue;
+.highscore {
+  font-size: 25px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+  font-family: "Voltaire", sans-serif;
 }
 
-.gameFlash{
-  background-color: black;
+.green {
+  background: green;
+  border-top-left-radius: 100%;
 }
 
-.userFlash{
-  background-color: white;
+.red {
+  background: red;
+  border-top-right-radius: 100%;
+}
+
+.yellow {
+  background: yellow;
+  border-bottom-left-radius: 100%;
+}
+
+.blue {
+  background: blue;
+  border-bottom-right-radius: 100%;
+}
+
+/* CENTER */
+.circle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  border: 15px solid #1e1e1e;
+
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+.msg {
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+}
+
+/* EFFECTS */
+.pressed {
+  filter: brightness(150%);
+  transform: scale(0.95);
+}
+
+.bgRed {
+  background: rgb(198, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+    height: 90vw;
+  }
+  h1 {
+    font-size: 40px;
+  }
+
+  .circle {
+    width: 32vw;
+    height: 32vw;
+  }
+
+  .msg {
+    font-size: 7vw;
+  }
+
+  .highscore {
+    font-size: 4vw;
+  }
 }

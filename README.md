@@ -2,6 +2,10 @@
 
 A classic Simon Game built with **HTML**, **CSS**, and **JavaScript**. Test your memory and reflexes by repeating the sequence of flashing colors!
 
+## 🌐 Live Demo:
+
+https://simon-says-game-7pno.onrender.com
+
 ## Features
 
 - Four colored buttons: **Red**, **Blue**, **Green**, and **Yellow**

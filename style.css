@@ -25,7 +25,7 @@ h1 {
   font-family: "Press Start 2P", serif;
   text-shadow:
     0 2px 0 black,
-    0 0 10px white;
+    0 0 5px white;
 }
 
 .container {
@@ -47,6 +47,21 @@ h1 {
   height: 100%;
   cursor: pointer;
 }
+
+/* Remove mobile tap highlight & focus outline */
+.button {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.button:focus,
+.button:active {
+  outline: none;
+}
+
+
 
 .highscore {
   font-size: 25px;
